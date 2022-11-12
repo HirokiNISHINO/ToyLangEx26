@@ -87,7 +87,7 @@ public class AstBinOp extends AstNode
 	{
 		//string can be compared only between string values.
 		if ((ltype == ExprType.STRING || rtype == ExprType.STRING) && (ltype != rtype)) {
-			throw new CompileErrorException("a boolean value can be only compared to another boolean value. : " + t.toString());
+			throw new CompileErrorException("a string value can be only compared to another string value. : " + t.toString());
 		}
 		
 		//boolean values can be only compared between boolean values.
