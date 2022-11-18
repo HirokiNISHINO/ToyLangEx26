@@ -196,7 +196,7 @@ public class Parser
 	{
 		Token t = this.getCurrentToken();
 		if (t.getC() != TokenClass.WHILE) {
-			throw new SyntaxErrorException("expected 'while' but found: " + t.getL());
+			throw new SyntaxErrorException("expected 'while' but found: " + t);
 		}
 		this.consumeCurrentToken();
 		
@@ -218,7 +218,7 @@ public class Parser
 		
 		Token t = this.getCurrentToken();
 		if (t.getC() != '{') {
-			throw new SyntaxErrorException("expected ';' but found: " + t.getL());
+			throw new SyntaxErrorException("expected ';' but found: " + t);
 		}
 		this.consumeCurrentToken();
 
@@ -233,7 +233,7 @@ public class Parser
 		
 		t = this.getCurrentToken();
 		if (t.getC() != '}') {
-			throw new SyntaxErrorException("expected ';' but found: " + t.getL());
+			throw new SyntaxErrorException("expected ';' but found: " + t);
 		}
 		this.consumeCurrentToken();
 		return stmts;
@@ -249,7 +249,7 @@ public class Parser
 		
 		Token t = this.getCurrentToken();
 		if (t.getC() != ';') {
-			throw new SyntaxErrorException("expected ';' but found: " + t.getL());
+			throw new SyntaxErrorException("expected ';' but found: " + t);
 		}
 		this.consumeCurrentToken();
 		
