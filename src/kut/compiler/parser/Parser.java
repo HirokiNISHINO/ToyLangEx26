@@ -531,7 +531,7 @@ public class Parser
 		Token t = this.getCurrentToken();
 
 		// unary op | unary op + multiplicativeExpr
-		AstNode lhs = unaryOp();
+		AstNode lhs = unaryOpExpr();
 		
 		while(true) {
 			t = this.getCurrentToken();
@@ -545,7 +545,7 @@ public class Parser
 			}
 			this.consumeCurrentToken();
 			
-			AstNode rhs = unaryOp();
+			AstNode rhs = unaryOpExpr();
 			AstNode binop = new AstBinOp(lhs, rhs, t);
 			lhs = binop;
 		}
@@ -557,7 +557,7 @@ public class Parser
 	 * @throws IOException
 	 * @throws CompileErrorException
 	 */
-	public AstNode unaryOp() throws IOException, CompileErrorException
+	public AstNode unaryOpExpr() throws IOException, CompileErrorException
 	{		
 		Token t = this.getCurrentToken();
 		if (t.getC() == '-' || t.getC() == '!') {
